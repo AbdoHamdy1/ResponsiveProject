@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ElectroStore - Home</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3f68e4",
+                        "background-light": "#ffffff",
+                        "background-off": "#f8f9fb",
+                        "background-dark": "#111521",
+                        "text-main": "#0e111b",
+                        "text-sub": "#506295",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="cart-shopping-solid-full.svg">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden antialiased">
+    <header class="sticky top-0 z-50 w-full bg-background-light dark:bg-background-dark border-b border-[#e8eaf3] dark:border-gray-800">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center w-full">
+            <div class="w-full max-w-[1280px] flex items-center justify-between py-4">
+                <div class="flex items-center gap-8 md:gap-12">
+                    <a class="flex items-center gap-3 text-text-main dark:text-white group" href="./index.html">
+                        <i class="fa-solid fa-bolt text-primary text-[25px] transition-transform group-hover:rotate-12"></i>
+                        <h2 class="text-2xl font-extrabold">ElectroStore</h2>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="./index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="./products.html">Shop</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">New Arrivals</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Brands</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4 md:gap-6">
+                    <div class="hidden md:flex relative group w-64">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-sub">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </div>
+                        <input class="block w-full p-2.5 pl-10 text-sm text-text-main bg-background-off dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary placeholder-text-sub"
+                            placeholder="Search products..." type="text" />
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="./login.html" class="p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 transition-colors text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">person</span>
+                        </a>
+                        <a href="./cart.html" class="p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 transition-colors text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                        </a>
+                        <button class="md:hidden p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="flex flex-col w-full items-center">
+        <section class="w-full max-w-[1280px] px-4 md:px-10 lg:px-40 py-8 md:py-12">
+            <div class="relative w-full rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-900 min-h-[500px] flex items-center">
+                <div class="absolute inset-0 w-full h-full bg-cover bg-center"
+                    style='background-image: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9MPsHB7iQzLheJPBEp0Dkt9DpW98nC-ELEGiwb9CQqisXarhZbWRHFVY8jOQdNPgtBKGrMKCug1QTOc5AHKB3G1Bt0U7gkKfKkUI_UQpa0ch983xcGtvQmDcUP4N0Ap9RVZd-zuApifD7NNbo15BplpD5O-DCqMxUg0j7OUGR5mu1Q1_VVZ-CpXL82vIu5Ee-IhBntwx8NpbRcZQzNgYlNeO2BOkfkLUqOg-2D6ULh25M6fdw7bbiv3iwtLxQkCpk9r4cDewZkbk")'>
+                </div>
+                <div class="relative z-10 p-8 md:p-16 max-w-2xl flex flex-col gap-6 items-start w-full">
+                    <span class="inline-block px-3 py-1 bg-primary/20 text-blue-200 text-xs font-bold uppercase tracking-wider rounded-full backdrop-blur-sm border border-primary/30">
+                        New Release
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        The Future <br />in Your Hand.
+                    </h1>
+                    <p class="text-gray-200 text-base md:text-lg font-light max-w-md">
+                        Experience the next generation of connectivity with our latest flagship smartphones featuring AI
+                        technology.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+                        <button class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg transition-all 
+                                      shadow-lg shadow-primary/30 active:scale-[0.98]
+                                      text-base sm:text-sm md:text-base">
+                            Explore New Arrivals
+                        </button>
+                        <button class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 
+                                       text-white font-bold rounded-lg backdrop-blur-md 
+                                       border border-white/20 transition-all active:scale-[0.98]
+                                       text-base sm:text-sm md:text-base">
+                            View Specs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full max-w-[1280px] px-4 md:px-10 lg:px-40 py-12 md:py-20">
+            <div class="flex items-end justify-between mb-8 md:mb-12">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white tracking-tight">
+                        Best Sellers
+                    </h2>
+                    <p class="text-text-sub mt-2 text-sm md:text-base">
+                        Top rated products from the last 30 days
+                    </p>
+                </div>
+                <a class="hidden md:flex items-center gap-1 text-primary font-bold text-sm hover:underline" href="#">
+                    View All
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-8 md:gap-y-10">
+                <div class="group flex flex-col gap-4">
+                    <div class="relative w-full aspect-[4/5] bg-background-off dark:bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoBep7o7upoKn0IfhV865KqOL4ZG6ljr9SWFbmA0W-G_oGf2BWO4DmKr8dqjwX7ikYztRXO1ZJiGMeMyI32NogQNxTtQWpVLXrE4E4KJorWU47_vSylVlacVKuDp_dBg5hDtHn4FC0-g5CbqNU0vkG0LwfHlDePZScMmv07FcdnXCUaBXDZbsQ8XLUaeptVHTqZTD22GXiNhPuJEK3XqzcEgqK5FTDOloGbR4HZsTwNvEqhwOxlv6Xo0WQewfmZaNoyMCNZ1FMUz8");'>
+                        </div>
+                        <button class="absolute bottom-3 right-3 size-9 md:size-10 bg-white dark:bg-background-dark text-text-main dark:text-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span class="material-symbols-outlined text-[18px] md:text-[20px]">add_shopping_cart</span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-sm md:text-base font-semibold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                iPhone 15 Pro
+                            </h3>
+                            <span class="text-sm font-bold text-primary">$999</span>
+                        </div>
+                        <p class="text-xs md:text-sm text-text-sub mt-1">Apple</p>
+                    </div>
+                </div>
+                <div class="group flex flex-col gap-4">
+                    <div class="relative w-full aspect-[4/5] bg-background-off dark:bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDW_53aNrBBHsj1XvnbD4qBFMZSIa6dKOxECFIrLzsv6J4r2xPgwMRyrky9XSawnfM4O_uh4MInxtXf2CsoLhhgsZnwpYimagwtiXK11Mpde6tVyGj0j05tFFdmgKTqLdbFYgjyCTx7ToHLIbKiHSqPFEB12ln7XbtllL3S0J3rb7qrIPcovs1qaBCohwSu8_k5ye6HWfZLIvRzbvlmdnCm9weVt3QxbZNcaRAaaVigZUsN7mqyDAXGx6VOzZU8uJzXwzVBnKL-VD4");'>
+                        </div>
+                        <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-10%</span>
+                        <button class="absolute bottom-3 right-3 size-9 md:size-10 bg-white dark:bg-background-dark text-text-main dark:text-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span class="material-symbols-outlined text-[18px] md:text-[20px]">add_shopping_cart</span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-sm md:text-base font-semibold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                Galaxy S24 Ultra
+                            </h3>
+                            <div class="flex flex-col items-end">
+                                <span class="text-sm font-bold text-primary">$1,169</span>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-text-sub mt-1">Samsung</p>
+                    </div>
+                </div>
+                <div class="group flex flex-col gap-4">
+                    <div class="relative w-full aspect-[4/5] bg-background-off dark:bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAL_0Xp7GVg9hhlSkYcNYZwrLICNbYdc1eJNejStP6gqnmoESPlp_2WOEM95vM2kNy1Md8r90AsDdl6DaOTXfj4Upe9mo-wGrJWrDFHD2Ri6Kb286j5Gh95q6Wq_ul8lrF5km5DkFTBc5AlOgGQXBJRMt-8yMkIsk-hxZSIyHp7YNvCnxkG9zmSyE4M7O8Rf1tt80TGOx4MRLKoUNqXVVrhClPiX5fRA077BDNiR_rl0WBaB_a1VLdNrId_VrB76R5qLNGPNy2j4GE");'>
+                        </div>
+                        <button class="absolute bottom-3 right-3 size-9 md:size-10 bg-white dark:bg-background-dark text-text-main dark:text-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span class="material-symbols-outlined text-[18px] md:text-[20px]">add_shopping_cart</span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-sm md:text-base font-semibold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                WH-1000XM5
+                            </h3>
+                            <span class="text-sm font-bold text-primary">$348</span>
+                        </div>
+                        <p class="text-xs md:text-sm text-text-sub mt-1">Sony</p>
+                    </div>
+                </div>
+                <div class="group flex flex-col gap-4">
+                    <div
+                        class="relative w-full aspect-[4/5] bg-background-off dark:bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_73kFuF_XZEyVVfT09MrYeOEJj0MYiZjMZZQG81DVx5kqT8vNkZ6c7wHUT_1rY-hgXtXvO1UzKvwPtk6RtRc3NN_2w6bUgBozNlwtrsa0Nwp09M0pRbumIGj9OIB4snpAypf2tc4IDpDvWXKymJbVOspilKCqKE07ng7ykepI4kfWns-lu87Jj9QeWQtlE1Z_Hm2UtmCnpe_n3WnphnK_n5BvaMlK_5ZzP6cMaTMqJOSonR8oKJ5IiKnziPWLHnRBZtbi0GTkTMU");'>
+                        </div>
+                        <button class="absolute bottom-3 right-3 size-9 md:size-10 bg-white dark:bg-background-dark text-text-main dark:text-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                            <span class="material-symbols-outlined text-[18px] md:text-[20px]">add_shopping_cart</span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="text-sm md:text-base font-semibold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                iPad Air
+                            </h3>
+                            <span class="text-sm font-bold text-primary">$599</span>
+                        </div>
+                        <p class="text-xs md:text-sm text-text-sub mt-1">Apple</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 flex md:hidden justify-center">
+                <a href="#"
+                    class="w-full max-w-xs text-center px-6 py-3 border border-[#e8eaf3] dark:border-gray-700 rounded-lg text-sm font-bold text-text-main dark:text-white">
+                    View All Products
+                </a>
+            </div>
+        </section>
+        <section class="w-full bg-background-off dark:bg-[#1a202e] py-16 md:py-24">
+            <div class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="flex-1 flex flex-col items-start gap-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-primary rounded-full">
+                            <span class="material-symbols-outlined text-[16px]">timer</span>
+                            <span class="text-xs font-bold uppercase tracking-wide">Limited Time Offer</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-text-main dark:text-white leading-tight tracking-tight">
+                            Upgrade Your <br /> Workspace
+                        </h2>
+                        <p class="text-lg text-text-sub leading-relaxed max-w-lg">
+                            Transform your productivity with our curated selection of high-performance monitors and
+                            ergonomic accessories. Get 20% off all workspace essentials this week.
+                        </p>
+                        <button
+                            class="mt-4 px-8 py-4 bg-text-main dark:bg-white text-white dark:text-text-main font-bold rounded-lg hover:opacity-90 transition-opacity">
+                            View Offer
+                        </button>
+                    </div>
+                    <div class="flex-1 w-full">
+                        <div class="relative w-full aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                data-alt="Clean minimalist desk setup with monitor, keyboard, and mouse"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzGy3TzuBnctKX6Nvd5Qum4evo9kwVwt1boPhJA9LTvAVjM4UfMcOUD-hySGnPnnud8YON1QM1eb_hvNeJo9bwboSrnh5dDwLvUpYcbHcm-00fRryZXAV_c0aA-gvy4RWvkYfTGLxw0QWSaRmpMq_qcMsGRlqbmhfC8KmnXkezzOAdybw2eZcjv6fxIz1xKqSYravrnJyG0cm4lc8xzDgmYeQogkOYNefgFrc3cMauBWly5DfOgQ5JMOTnWFAvy26oyMSBK8vSYCg");'>
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-background-dark/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex items-center gap-4 max-w-xs">
+                                <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined">desktop_windows</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-text-main dark:text-white">UltraWide Monitor 4K</p>
+                                    <p class="text-xs text-text-sub">Ends Sunday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full max-w-[1280px] px-4 md:px-10 lg:px-40 py-16">
+            <h2 class="text-2xl font-bold text-text-main dark:text-white mb-8">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a class="group relative h-40 rounded-xl overflow-hidden" href="#">
+                    <div class="absolute inset-0 bg-gray-200 dark:bg-gray-800 bg-cover bg-center transition-transform group-hover:scale-110"
+                        data-alt="Abstract representation of laptops"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnWWn988irFv1HOc84Q4dMAP_RYkwTu9LXwOpGcGI59VPdFM0Y4t22BQdwofO1m9E1vYaIBOBxnID5-VK1tkn5wwychCtJfozqBcXzljj_JP5f7Gc1sMLrT3UEdOTpfNcg5c2oQUVtflcmluQBOBDZ1v77YqZneSh43Ys6JMaXKpcg6B9e11a-4wSgd3E8FD7dNQfmr8DytQFxRCq94_Ze6Ltxf_qpz87K5NB3RpdYd6DaQcu5ztidXSUObdD6s72c0-46WXvqr8M");'>
+                    </div>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Laptops</span>
+                    </div>
+                </a>
+                <a class="group relative h-40 rounded-xl overflow-hidden" href="#">
+                    <div class="absolute inset-0 bg-gray-200 dark:bg-gray-800 bg-cover bg-center transition-transform group-hover:scale-110"
+                        data-alt="Abstract representation of smart watches"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqkWxoD6_LXKmOR4I0OoTcJlFl713YPu-y2MgQ-THlW1LPUSgfj5QP-jSf7LDKBSDShPTdrrEnLE_eE3houhQR6BXZNAHR2x6LUvF3GUZUiFyqtI9Zelkc092-hNDU7rSpy5tO9TUErV30hQrrZ8aOD4eP87ILf7oxzR6XdfMjkplemgMMuCiuDy2u50wXPB7g8SRNGt_hdwukpmea67tmxzZL9UMdcHT_-xpfyQb-gSe9Hb2z6l6T9P39mRiHMMJnIxHX7s8FJ7o");'>
+                    </div>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Wearables</span>
+                    </div>
+                </a>
+                <a class="group relative h-40 rounded-xl overflow-hidden" href="#">
+                    <div class="absolute inset-0 bg-gray-200 dark:bg-gray-800 bg-cover bg-center transition-transform group-hover:scale-110"
+                        data-alt="Abstract representation of audio equipment"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlnvQYw22Ge4p36zYfmXwJtJAcoV5J7SkuHqEUi8vTpYbmuuZbIot5NXu6doRDlJ6iPGJt5ZDl06eKe_E_rVYb4Cxrkl5a7z2Aojsi_P5fYuwwn1HzBlFljpku6N5ZLayzKalFjTIijGZEaDOlvwQmdJapK_1gqEmbYTZP02VDTBqTIjJ8Bjr7UfAYJQzN7IlVhKNwOUzFHkB_8LO3wB-O96s9-BZbmjAhsecDApqMDHE5x48jOruv09z9Mgno0sfNhn2HnbTLdvc");'>
+                    </div>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Audio</span>
+                    </div>
+                </a>
+                <a class="group relative h-40 rounded-xl overflow-hidden" href="#">
+                    <div class="absolute inset-0 bg-gray-200 dark:bg-gray-800 bg-cover bg-center transition-transform group-hover:scale-110"
+                        data-alt="Abstract representation of gaming accessories"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNJTvEmTwZRYwP2BW6QJersEsHKGLwbepv4GAqphHUS1WsOJ6PdEICF7HTTHg0cfm_PyBW9zeyXY22cUM3bF6iwseODTBlhJRr0HWRA4Yxi-hos4-S3c6C6YkLisFNwiJ-FfC23tijSFX7yZ6E4Zdji2_LGDNNM5YtzBEWy3Bd5bCB8hKNBucR6WJcmS-g26wTEbHvPd7A40bc6sa0vpKC-fDoKfallqO1XLjVt1jxulMMv1dQNoJUmS0drK7OWqHa1u1oZfXnsg8");'>
+                    </div>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Gaming</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="w-full bg-white dark:bg-background-dark border-t border-[#e8eaf3] dark:border-gray-800 pt-16 pb-8">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <a href="./index.html" class="flex items-center gap-3 mb-6 text-text-main dark:text-white group">
+                        <i class="fa-solid fa-bolt text-primary text-[25px] transition-transform group-hover:rotate-12"></i>
+                        <h2 class="text-2xl font-extrabold tracking-tight">
+                            ElectroStore
+                        </h2>
+                    </a>
+                    <p class="text-text-sub text-sm mb-6">
+                        Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                    </p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2.5 rounded-lg bg-background-off dark:bg-gray-800 border border-transparent focus:border-primary focus:ring-0 text-sm text-text-main dark:text-white" />
+                        <button type="submit" class="w-full px-4 py-2.5 bg-text-main dark:bg-white text-white dark:text-text-main font-bold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">Customer Care</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Track Your Order</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">About Us</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Our Story</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Press</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Corporate</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">Social Media</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">Ig</span>
+                        </a>
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">X</span>
+                        </a>
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-[#e8eaf3] dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-text-sub">
+                    © 2026 ElectroStore Inc. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-text-sub hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-text-sub hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

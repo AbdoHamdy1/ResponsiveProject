@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroStore | Products</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#3f68e4",
+            "background-light": "#ffffff",
+            "background-off": "#f8f9fb",
+            "background-dark": "#111521",
+            "text-main": "#0e111b",
+            "text-sub": "#506295",
+          },
+          fontFamily: {
+            display: ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .btn-pop { @apply scale-95; }
+      .card-added { @apply ring-2 ring-primary ring-offset-2; }
+
+      @keyframes shake {
+        0%,100% { transform: translateX(0); }
+        25% { transform: translateX(-3px); }
+        75% { transform: translateX(3px); }
+      }
+      .animate-reset:active {
+        animation: shake .3s ease-in-out;
+      }
+    }
+    .star-filled {
+    font-variation-settings: 'FILL' 1 !important;
+  }
+  </style>
+</head>
+
+
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden antialiased">
+    <header class="sticky top-0 z-50 w-full bg-background-light dark:bg-background-dark border-b border-[#e8eaf3] dark:border-gray-800">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center w-full">
+            <div class="w-full max-w-[1280px] flex items-center justify-between py-4">
+                <div class="flex items-center gap-8 md:gap-12">
+                    <a class="flex items-center gap-3 text-text-main dark:text-white group" href="./index.html">
+                        <i
+                            class="fa-solid fa-bolt text-primary text-[25px] transition-transform group-hover:rotate-12"></i>
+                        <h2 class="text-2xl font-extrabold">ElectroStore</h2>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="./index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="./products.html">Shop</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">New Arrivals</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Brands</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4 md:gap-6">
+                    <div class="hidden md:flex relative group w-64">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-sub">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </div>
+                        <input
+                            class="block w-full p-2.5 pl-10 text-sm text-text-main bg-background-off dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary placeholder-text-sub"
+                            placeholder="Search products..." type="text" />
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="./login.html"
+                            class="p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 transition-colors text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">person</span>
+                        </a>
+                        <a href="./cart.html"
+                            class="p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 transition-colors text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                        </a>
+                        <button
+                            class="md:hidden p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="max-w-[1280px] mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+
+  <aside class="md:col-span-3 space-y-8">
+    <div>
+      <h3 class="font-bold mb-4">Categories</h3>
+      <label class="flex gap-2 items-center"><input type="checkbox" class="filter-category" value="smartphones">Smartphones</label>
+      <label class="flex gap-2 items-center"><input type="checkbox" class="filter-category" value="tablets">Tablets</label>
+      <label class="flex gap-2 items-center"><input type="checkbox" class="filter-category" value="accessories">Accessories</label>
+    </div>
+
+    <div>
+        <h3 class="font-bold mb-4 text-text-main dark:text-white">
+            Price Range
+        </h3>
+    
+        <div class="flex items-center gap-3">
+            <input id="minPrice" type="number" value="0" class="w-full rounded-lg border border-gray-300 dark:border-gray-700
+                 bg-white dark:bg-gray-800
+                 px-3 py-2 text-sm text-text-main dark:text-white
+                 focus:outline-none focus:ring-2 focus:ring-primary" />
+    
+            <span class="text-gray-400 font-semibold">-</span>
+    
+            <input id="maxPrice" type="number" value="2000" class="w-full rounded-lg border border-gray-300 dark:border-gray-700
+                 bg-white dark:bg-gray-800
+                 px-3 py-2 text-sm text-text-main dark:text-white
+                 focus:outline-none focus:ring-2 focus:ring-primary" />
+        </div>
+    </div>
+
+
+   <div>
+  <h3 class="font-bold mb-4 text-text-main dark:text-white">
+    Rating
+  </h3>
+
+  <div class="space-y-3">
+
+    <!-- 5 stars -->
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input
+        type="checkbox"
+        class="filter-rating w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+        value="5"
+      />
+
+      <div class="flex items-center gap-0.5 text-yellow-400">
+        <span class="material-symbols-outlined text-lg star-filled">star</span>
+        <span class="material-symbols-outlined text-lg star-filled">star</span>
+        <span class="material-symbols-outlined text-lg star-filled">star</span>
+        <span class="material-symbols-outlined text-lg star-filled">star</span>
+        <span class="material-symbols-outlined text-lg star-filled">star</span>
+      </div>
+
+      <span class="text-sm text-text-main dark:text-white">
+        &amp; Up
+      </span>
+    </label>
+
+    <!-- 4 stars -->
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input
+        type="checkbox"
+        class="filter-rating w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+        value="4"
+      />
+
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-lg text-yellow-400 star-filled">star</span>
+        <span class="material-symbols-outlined text-lg text-yellow-400 star-filled">star</span>
+        <span class="material-symbols-outlined text-lg text-yellow-400 star-filled">star</span>
+        <span class="material-symbols-outlined text-lg text-yellow-400 star-filled">star</span>
+        <span class="material-symbols-outlined text-lg text-gray-300 star-filled">star</span>
+      </div>
+
+      <span class="text-sm text-text-main dark:text-white">
+        &amp; Up
+      </span>
+    </label>
+
+  </div>
+</div>
+
+
+    <button id="resetFilters"
+      class="animate-reset w-full py-2 rounded-lg font-bold text-white
+             bg-red-500 hover:bg-red-600 transition-all active:scale-95">
+      Reset Filters
+    </button>
+  </aside>
+
+  <section class="md:col-span-9">
+    <p id="resultsCount" class="mb-6 text-text-sub"></p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1 -->
+      <div class="product-card border rounded-xl p-4 transition"
+        data-category="smartphones" data-price="1199" data-rating="4.9">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC80zHiDi3aM9gWAfV6Luyhb-65N4pB90d5jKP06ANxJcr2YeAvt1t34r0pSBQJLZXD0ZR4e-5IodsBTwywenDBmGyYRdW8uB_skMRX226Qhi6yuaEXeuT7LrNwKH69dM5W10LSBpbIOcztVt0uFkMj7gV9uT_sOewsj539Rm_uVvKvw0SI-QkgFfF5GeKUh73mYqxyWVB_2gP4g1t0KhgMz12mKo_jkdKe9BRpWtxVx8VjUoRZapxzAbLxHS5S-QalyTtXAdxCMPs"
+          class="w-full h-40 object-contain mb-4" />
+        <h4 class="font-bold mb-2">ProPhone 15 Ultra</h4>
+        <span class="price font-bold text-primary">$1199</span>
+        <button class="cart-btn mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold active:scale-95">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- 2 -->
+      <div class="product-card border rounded-xl p-4 transition"
+        data-category="smartphones" data-price="999" data-rating="4.7">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNmAPUqh-CgtybJwE33t1Eyo2GXDFXuqkfRbEoDsL1pnx-YAZoi22E_Aa3w5FIT21I7LpNnZRarsft14VBOErRdaMosXRgOdgAq68iqa41PjEjojj2_CXRgm5xnSFcu1u8N6KQz-r_rifGz9kxwgWX1Mz3U1r96JtHFBABEEInB6Si_ATY6FS5D4GAxi6U6In_5ERzRoC2u2xPBoyfFbalvj6B91OIFr-0T-VASF2ZQiFYWvlHTuAPn482N2Ww5YLuBJvdfAUEoqc"
+          class="w-full h-40 object-contain mb-4" />
+        <h4 class="font-bold mb-2">Galaxy X24 Plus</h4>
+        <span class="price font-bold text-primary">$999</span>
+        <button class="cart-btn mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold active:scale-95">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- 3 -->
+      <div class="product-card border rounded-xl p-4 transition"
+        data-category="accessories" data-price="348" data-rating="4.5">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL_0Xp7GVg9hhlSkYcNYZwrLICNbYdc1eJNejStP6gqnmoESPlp_2WOEM95vM2kNy1Md8r90AsDdl6DaOTXfj4Upe9mo-wGrJWrDFHD2Ri6Kb286j5Gh95q6Wq_ul8lrF5km5DkFTBc5AlOgGQXBJRMt-8yMkIsk-hxZSIyHp7YNvCnxkG9zmSyE4M7O8Rf1tt80TGOx4MRLKoUNqXVVrhClPiX5fRA077BDNiR_rl0WBaB_a1VLdNrId_VrB76R5qLNGPNy2j4GE"
+          class="w-full h-40 object-contain mb-4" />
+        <h4 class="font-bold mb-2">WH-1000XM5</h4>
+        <span class="price font-bold text-primary">$348</span>
+        <button class="cart-btn mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold active:scale-95">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- 4 -->
+      <div class="product-card border rounded-xl p-4 transition"
+        data-category="smartphones" data-price="699" data-rating="4.5">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9rdVMkDLA7UbdasGN2wwko4OromS95v0q1RFFWnja5yv3tCJX8I97sv9G2zk_kU9C4xgVWQRbqn59oRbXfRsSzQyzWTExR2oYr5QZ11Ybze5uUVzzwTIzNZMSt_iwQ8vuch8FAUpGo0E64uyiuGiwe4yZyZjFCTyIBJ_t97F_CaccgxTTbDfSdVgvyoGIUx6yQ3DQUwh4dbYt6s-vlzcyRBxdYafEV72islUtUELfnrCQERmBWtyiNuiZZNZUfzd5C8jQZlxVriU"
+          class="w-full h-40 object-contain mb-4" />
+        <h4 class="font-bold mb-2">Pixel Vision 8</h4>
+        <span class="price font-bold text-primary">$699</span>
+        <button class="cart-btn mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold active:scale-95">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- 5 -->
+      <div class="product-card border rounded-xl p-4 transition"
+        data-category="smartphones" data-price="449" data-rating="4.8">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm1SXWJTVso27A0C6DZYoeZqWQOH_6lCK7E6y-LmMjxRqKxJasTbBwkXpVe48P34C7y0X-2nwdN18fyxxtsQIXq-7HcQtRucn0kF-en8GifqzgMgc20-o1UXytqZ8woUZ78xMPSdUN6gFiyuiIIsSpU7skRH80WwYgzVhELDDokQMN28Ai2d2Yf_vDxl1hG2zKFO0s8d9UMdCH9OEzGNivvKWPCl7yUFDvd-CtQ7lVc9JjS_afaWSl3-LDXvUR1ggpj28mLtshmxE"
+          class="w-full h-40 object-contain mb-4" />
+        <h4 class="font-bold mb-2">Nord Edge 5</h4>
+        <span class="price font-bold text-primary">$449</span>
+        <button class="cart-btn mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold active:scale-95">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- 6 -->
+      <div class="product-card border rounded-xl p-4 transition"
+        data-category="smartphones" data-price="1299" data-rating="4.6">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0wL3nGoAGpBhk-YO-FhJ0XQlXbiw-7-HU9b6ggp-usG-mNflqqaYR0MI6GfYFNCND-mRcxlNjgdk9L2gHP1MxKE23v5gQXNQoskY3oNGE1VX8eGtd-4I46Bh98Xf7a5fq6U6aQAT--51tqvBjc6ECUMD4sUnjQ3NStimD8-8SneKz9LK_cOceAlHLUIvv-MWOQHK7okIlqe-qMrCi29P916IxEFJtb0bG7X-PwkabSyJleQDwLXde370rH9tTWBr-NXb1tDRbf-4"
+          class="w-full h-40 object-contain mb-4" />
+        <h4 class="font-bold mb-2">Xperia Pro-I</h4>
+        <span class="price font-bold text-primary">$1299</span>
+        <button class="cart-btn mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold active:scale-95">
+          Add to Cart
+        </button>
+      </div>
+
+    </div>
+  </section>
+</main>
+<footer class="w-full bg-white dark:bg-background-dark border-t border-[#e8eaf3] dark:border-gray-800 pt-16 pb-8">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <a href="./index.html" class="flex items-center gap-3 mb-6 text-text-main dark:text-white group">
+                        <i
+                            class="fa-solid fa-bolt text-primary text-[25px] transition-transform group-hover:rotate-12"></i>
+                        <h2 class="text-2xl font-extrabold tracking-tight">
+                            ElectroStore
+                        </h2>
+                    </a>
+                    <p class="text-text-sub text-sm mb-6">
+                        Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                    </p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-4 py-2.5 rounded-lg bg-background-off dark:bg-gray-800 border border-transparent focus:border-primary focus:ring-0 text-sm text-text-main dark:text-white" />
+                        <button type="submit"
+                            class="w-full px-4 py-2.5 bg-text-main dark:bg-white text-white dark:text-text-main font-bold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">Customer Care</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Help
+                                Center</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Track Your
+                                Order</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Returns &
+                                Refunds</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">About Us</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Our Story</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Press</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Corporate</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">Social Media</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">Ig</span>
+                        </a>
+                        <a href="#"
+                            class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">X</span>
+                        </a>
+                        <a href="#"
+                            class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-[#e8eaf3] dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-text-sub">
+                    © 2026 ElectroStore Inc. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-text-sub hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-text-sub hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="products.js"></script>
+</body>
+</html>

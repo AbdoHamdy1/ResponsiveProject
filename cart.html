@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElectroStore | Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3f68e4",
+                        "background-light": "#ffffff",
+                        "background-off": "#f8f9fb",
+                        "background-dark": "#111521",
+                        "text-main": "#0e111b",
+                        "text-sub": "#506295",
+                    },
+                    fontFamily: {
+                        display: ["Work Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+      .cart-item {
+        @apply flex items-center gap-4 p-4 rounded-xl bg-background-off dark:bg-gray-800 border border-[#e8eaf3] dark:border-gray-700;
+      }
+      .cart-item img {
+        @apply w-20 h-20 object-contain rounded-lg bg-white dark:bg-gray-700 p-2;
+      }
+      .cart-info {
+        @apply flex-1;
+      }
+      .cart-info h4 {
+        @apply font-bold text-text-main dark:text-white mb-1;
+      }
+      .cart-info p {
+        @apply text-sm text-text-sub;
+      }
+      .cart-actions button {
+        @apply bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors;
+      }
+    }
+  </style>
+</head>
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden antialiased">
+    <header
+        class="sticky top-0 z-50 w-full bg-background-light dark:bg-background-dark border-b border-[#e8eaf3] dark:border-gray-800">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center w-full">
+            <div class="w-full max-w-[1280px] flex items-center justify-between py-4">
+                <div class="flex items-center gap-8 md:gap-12">
+                    <a class="flex items-center gap-3 text-text-main dark:text-white group" href="./index.html">
+                        <i
+                            class="fa-solid fa-bolt text-primary text-[25px] transition-transform group-hover:rotate-12"></i>
+                        <h2 class="text-2xl font-extrabold">ElectroStore</h2>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="./index.html">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="./products.html">Shop</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">New Arrivals</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Brands</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4 md:gap-6">
+                    <div class="hidden md:flex relative group w-64">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-sub">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </div>
+                        <input
+                            class="block w-full p-2.5 pl-10 text-sm text-text-main bg-background-off dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary placeholder-text-sub"
+                            placeholder="Search products..." type="text" />
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="./login.html"
+                            class="p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 transition-colors text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">person</span>
+                        </a>
+                        <a href="./cart.html"
+                            class="relative p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 transition-colors text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <span
+                                class="cart-dot hidden absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-red-500 border-2 border-white dark:border-background-dark">
+                            </span>
+                        </a>
+                        <button
+                            class="md:hidden p-2 rounded-full hover:bg-background-off dark:hover:bg-gray-800 text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full max-w-[1280px] mx-auto px-4 md:px-10 py-12">
+        <div class="bg-white dark:bg-background-dark rounded-2xl shadow-sm p-6 md:p-10">
+            <h1 class="text-2xl md:text-3xl font-bold mb-6">
+                Your Cart
+            </h1>
+            <div id="cartItems" class="mb-8 space-y-4"></div>
+            <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-t border-[#e8eaf3] dark:border-gray-800 pt-6">
+                <h3 class="text-lg md:text-xl font-bold">
+                    Total:
+                    <span id="cartTotal" class="ml-2">$0.00</span>
+                </h3>
+
+                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                    <button class="clear-cart w-full sm:w-auto px-6 py-3 bg-black text-white font-bold rounded-lg hover:opacity-90 transition-all">
+                        Clear Cart
+                    </button>
+                    <button id="checkoutBtn" disabled class="w-full sm:w-auto px-8 py-3 bg-gray-300 text-white font-bold rounded-lg cursor-not-allowed">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="w-full bg-white dark:bg-background-dark border-t border-[#e8eaf3] dark:border-gray-800 pt-16 pb-8">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <a href="./index.html" class="flex items-center gap-3 mb-6 text-text-main dark:text-white group">
+                        <i
+                            class="fa-solid fa-bolt text-primary text-[25px] transition-transform group-hover:rotate-12"></i>
+                        <h2 class="text-2xl font-extrabold tracking-tight">
+                            ElectroStore
+                        </h2>
+                    </a>
+                    <p class="text-text-sub text-sm mb-6">
+                        Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+                    </p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-4 py-2.5 rounded-lg bg-background-off dark:bg-gray-800 border border-transparent focus:border-primary focus:ring-0 text-sm text-text-main dark:text-white" />
+                        <button type="submit"
+                            class="w-full px-4 py-2.5 bg-text-main dark:bg-white text-white dark:text-text-main font-bold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">Customer Care</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Track Your Order</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">About Us</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Our Story</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Careers</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Press</a>
+                        </li>
+                        <li><a href="#" class="text-text-sub text-sm hover:text-primary transition-colors">Corporate</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-text-main dark:text-white font-bold mb-6">Social Media</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">Ig</span>
+                        </a>
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">X</span>
+                        </a>
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full bg-background-off dark:bg-gray-800 text-text-sub hover:bg-primary hover:text-white transition-all">
+                            <span class="font-bold">In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-[#e8eaf3] dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-text-sub">
+                    © 2026 ElectroStore Inc. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-text-sub hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-text-sub hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>
